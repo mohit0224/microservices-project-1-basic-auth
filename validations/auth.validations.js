@@ -32,6 +32,7 @@ const createAccountValidation = (data) => {
 
 	return schema.validate(data);
 };
+
 const loginAccountValidation = (data) => {
 	const schema = Joi.object({
 		identifier: Joi.string().min(3).max(50).trim().required().messages({

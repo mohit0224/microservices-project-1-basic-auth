@@ -3,6 +3,7 @@ const ENV = {
 	MONGODB_NAME: String(process.env.MONGODB_NAME),
 	BCRYPT_SALT: parseInt(process.env.BCRYPT_SALT),
 	JWT_SECRET: String(process.env.JWT_SECRET),
+	AUTHPORT: parseInt(process.env.AUTHPORT),
 };
 
 export default ENV;

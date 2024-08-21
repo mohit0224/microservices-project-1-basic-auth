@@ -4,9 +4,10 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRoutes from "../routes/auth.route.js";
 import dbConnect from "../config/dbConnect.config.js";
+import ENV from "../utils/env.utils.js";
 
 const app = express();
-const PORT = process.env.AUTHPORT;
+const PORT = ENV.AUTHPORT;
 const corsOption = {
 	origin: "*",
 	credentials: true,
