@@ -57,18 +57,16 @@ const loginAccount = async (req, res) => {
 
 		const token = generateToken(existUser._id);
 
-		return (
-			res
-				.status(200)
-				// .cookie("token", token, {
-				// 	httpOnly: process.env.NODE_ENV === "production",
-				// 	secure: process.env.NODE_ENV === "production",
-				// 	// sameSite: "none",
-				// 	// domain: process.env.FRONTEND_ORIGIN,
-				// 	maxAge: 10 * 1000,
-				// })
-				.json(httpResponse("Login successfully !!", true, {}))
-		);
+		return res
+			.status(200)
+			.cookie("token", token, {
+				httpOnly: process.env.NODE_ENV === "production",
+				secure: process.env.NODE_ENV === "production",
+				// sameSite: "none",
+				// domain: process.env.FRONTEND_ORIGIN,
+				maxAge: 1 * 60 * 1000,
+			})
+			.json(httpResponse("Login successfully !!", true, {}));
 	} catch (err) {
 		return res.status(500).json(httpError(err.message, false));
 	}
