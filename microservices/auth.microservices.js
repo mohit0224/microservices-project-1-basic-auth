@@ -6,7 +6,7 @@ import authRoutes from "../routes/auth.route.js";
 import dbConnect from "../config/dbConnect.config.js";
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 10001;
 const corsOption = {
 	origin: "*",
 	credentials: true,
